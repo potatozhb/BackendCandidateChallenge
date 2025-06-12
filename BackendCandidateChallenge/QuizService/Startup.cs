@@ -21,10 +21,13 @@ public class Startup
 {
     /*TODO:
     1. refactor dto.
-    2. automap or create a mapper class for data modeul and dto
-    3. Delete function need check more things. for instance, 
+    2. automap or create a mapper class between data model and dto
+    3. Delete function need check more things based on business logic. for instance, 
         if delete right answer, need give user a warning.
     4. when we add answer, don't need check quiz
+    5. Didn't test cascade delete
+    6. Seprate QuizController into three controllers
+    7. More test cases to cover all repository, service and controller
 
     */
     public Startup(IConfiguration configuration)
