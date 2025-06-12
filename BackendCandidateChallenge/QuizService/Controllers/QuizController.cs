@@ -139,7 +139,8 @@ public class QuizController : Controller
         try
         {
             var question = this.questionService.AddQuestion(id,value);
-            return StatusCode((int)HttpStatusCode.Created);
+            var locationUrl = $"/api/quizzes/{id}/questions/{question.Id}";
+            return Created(locationUrl, question);
         }
         catch (NotFoundException ex)
         {
@@ -216,8 +217,9 @@ public class QuizController : Controller
 
         try
         {
-            var question = this.answerService.AddAnswer(qid, value);
-            return StatusCode((int)HttpStatusCode.Created);
+            var answer = this.answerService.AddAnswer(qid, value);
+            var locationUrl = $"/api/quizzes/{id}/questions/{qid}/answers/{answer.Id}";
+            return Created(locationUrl, answer);
         }
         catch (NotFoundException ex)
         {
